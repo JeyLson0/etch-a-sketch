@@ -1,0 +1,34 @@
+html {
+    box-sizing: border-box;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border: 5px red dashed;
+    min-height: 100vh;
+}
+
+#ui {
+    display: flex;
+}
+
+#grid {
+    border: 5px red dashed;
+    height:400px;
+    width: 400px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+
+.border {
+    border: 1px black solid;
+}
+
+.divs {
+    flex-basis: 195px;
+}
+
