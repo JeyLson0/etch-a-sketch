@@ -28,7 +28,8 @@ body {
     border: 1px black solid;
 }
 
-.divs {
+.pixel {
+    border: 1px black solid;
     flex-basis: 195px;
 }
 
