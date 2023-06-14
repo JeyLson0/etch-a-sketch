@@ -1,32 +1,44 @@
-//Variables
+//Global Variables
 let rangeBar = document.querySelector('#range_bar');
 let slider = document.querySelector('#grid_slider');
 let rangeValue = document.querySelector('#range_value');
 let gridValue = slider.value;
 let gridBox = document.querySelector('#grid');
-let gridList = gridBox.querySelectorAll('div')
-let gridBoxNum = gridBox.getElementsByClassName('pixel')
-let pixelNum = gridBoxNum.length
+let gridBoxPix = gridBox.getElementsByClassName('pixel')
+let pixelNum = gridBoxPix.length
 
-insertDivs();
-function insertDivs() {
+//Pixel Function
+pixelFunction();
+function pixelFunction() {
     let totalGridDivs = gridValue * gridValue;
     for (i=0; i<totalGridDivs; i++) {
         let gridDivs = document.createElement('div');
         gridDivs.classList.add('pixel')
+        gridDivs.setAttribute(`style`, `flex-basis: ${500/gridValue}px`)
         gridBox.appendChild(gridDivs);
     }
-    pixelNum = gridBoxNum.length;
+    pixelNum = gridBoxPix.length;
     console.log(pixelNum)
-
     if (totalGridDivs != pixelNum) {
         let excessDivs = pixelNum - totalGridDivs;
         for(i=0; i<excessDivs; i++) {
             gridBox.removeChild(gridBox.firstElementChild);
         }
     }
-    pixelNum = gridBoxNum.length;
+    pixelNum = gridBoxPix.length;
     console.log(pixelNum)
+
+    //Mouse Event
+    for (const pixels of gridBoxPix) {
+
+        pixels.addEventListener('mousemove', (e) =>{
+           console.log('hover')
+           pixels.style.backgroundColor = `${colorValue}`
+        })
+       
+      
+   }
+
 }
 
 //Range bar
@@ -34,20 +46,15 @@ rangeValue.textContent= `${slider.value} x ${slider.value}`;
 slider.oninput = function Range() {
     rangeValue.textContent = `${slider.value} x ${slider.value}`;
     gridValue = slider.value;
-    insertDivs();
+    pixelFunction();
 }
 
+//Color Picker Value
+let colorPicker = document.querySelector('#color_Picker')
+let colorValue = colorPicker.value;
+colorPicker.addEventListener("input", (e)=> {
+    colorValue = e.target.value;
+    console.log(e);
+})
 
 
-
-
-/* gridRange();
-function gridRange() {
-
-} */
-
-//GRID and grid size
-
-
-
-//function will fill divContainer 

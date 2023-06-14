@@ -17,8 +17,8 @@ body {
 
 #grid {
     border: 5px red dashed;
-    height:400px;
-    width: 400px;
+    height:500px;
+    width: 500px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -26,10 +26,10 @@ body {
 
 .border {
     border: 1px black solid;
+    
 }
 
-.pixel {
-    border: 1px black solid;
-    flex-basis: 195px;
+.pixel{
+    background-color: aqua;
 }
 
