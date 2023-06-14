@@ -7,30 +7,37 @@
         <link rel="stylesheet" href="./style.css">
         <script src="./script.js" defer></script>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="preconnect" href="https://fonts.googleapis.com">
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link href="https://fonts.googleapis.com/css2?family=Gloria+Hallelujah&family=Moirai+One&display=swap" rel="stylesheet">    
     </head>
     <body>
-        <div id="header">
-            <div id="title">Etch-a-Sketch</div>
-        </div>
-        <div id="ui">
+        <div id="main_Page">
             <div id="controls">
-                <div id="color_wheel">
-                    <input type="color" id="color_Picker" name="color" value="#ff0000">
+                <div>
+                    <input type="color" id="color_Picker" name="color" value="#000000">
                 </div>
-                <div id="eraser">Eraser</div>
-                <div id="clear">Clear</div>
+                <div>
+                    <!-- <input type="button" id="eraser" value="Eraser (E)"> -->
+                </div>
+                <div id="clear_shortcut">
+                    <input type="button" id="clear" value="Clear (C)">
+                </div>
             </div>
-            <div id="divs_container">
-                <div id="grid" class="borders">
+            <div id="ui">
+                <div id="header">
+                    <div id="title" class="font">Etch-a-Sketch</div>
                 </div>
-                <div id="range_bar">
-                    <p id="range_value"></p>
-                    <input id="grid_slider" type="range" name="grid_range" value="64" min="1" max="64">
+                <div id="divs_container">
+                    <div id="grid" class="borders">
+                    </div>
+                    <div id="range_bar">
+                        <p id="range_value" ></p>
+                        <input id="grid_slider" type="range" name="grid_range" value="64" min="1" max="100">
+                    </div>
                 </div>
             </div>
         </div>
-        <div id="footer">
-        </div>
-     
+       
     </body>
 </html>

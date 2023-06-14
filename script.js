@@ -18,7 +18,6 @@ function pixelFunction() {
         gridBox.appendChild(gridDivs);
     }
     pixelNum = gridBoxPix.length;
-    console.log(pixelNum)
     if (totalGridDivs != pixelNum) {
         let excessDivs = pixelNum - totalGridDivs;
         for(i=0; i<excessDivs; i++) {
@@ -26,17 +25,13 @@ function pixelFunction() {
         }
     }
     pixelNum = gridBoxPix.length;
-    console.log(pixelNum)
 
     //Mouse Event
     for (const pixels of gridBoxPix) {
 
         pixels.addEventListener('mousemove', (e) =>{
-           console.log('hover')
            pixels.style.backgroundColor = `${colorValue}`
         })
-       
-      
    }
 
 }
@@ -54,7 +49,25 @@ let colorPicker = document.querySelector('#color_Picker')
 let colorValue = colorPicker.value;
 colorPicker.addEventListener("input", (e)=> {
     colorValue = e.target.value;
-    console.log(e);
 })
+
+//Clear button
+
+let clearButton = document.querySelector('#clear')
+ clearButton.addEventListener('keydown', (e)=>{
+    for (const pixels of gridBoxPix) {
+        if (e.keycode = 67) {
+              pixels.style.backgroundColor = `#FFFFFF`
+               console.log(e)
+          }
+        }
+    }, useCapture = true)
+    clearButton.addEventListener('click', (e) => {
+        for (const pixels of gridBoxPix) {
+         pixels.style.backgroundColor = `#FFFFFF`
+       }
+    })
+    
+
 
 
